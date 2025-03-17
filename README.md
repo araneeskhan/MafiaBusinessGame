@@ -23,10 +23,6 @@ A thrilling mobile game where players build and manage their own mafia empire! T
 - Linear Gradient for UI effects
 - Expo Vector Icons
 
-## 📱 Screenshots
-
-[Add screenshots of your game here]
-
 ## 🛠️ Installation
 
 1. Clone the repository:
