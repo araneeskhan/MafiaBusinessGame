@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import AppNavigator from './AppNavigator';
+import { LogBox } from 'react-native';
+import { AuthProvider } from './contexts/AuthContext';
+import { GameProvider } from './contexts/GameContext';
+import { ToastProvider } from 'expo-toast';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+// Ignore warnings for now
+LogBox.ignoreAllLogs();
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => {
+    return (
+        <AuthProvider>
+            <GameProvider>
+                <ToastProvider>
+                    <AppNavigator />
+                </ToastProvider>
+            </GameProvider>
+        </AuthProvider>
+    );
+};
+
+export default App;
